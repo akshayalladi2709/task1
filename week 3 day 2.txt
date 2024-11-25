@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>  
+#include <unistd.h> 
+
+using namespace std;
+
+
+float Random(int upper, int lower) {
+    return rand() % (upper -lower + 1) + lower;
+}
+
+void displayData(int speed, int fuelLevel, int engineTemp) {
+    
+  
+
+    cout << "Speed: " << setw(3) << speed << " km/h  "
+         << "Fuel: " << setw(3) << fuelLevel << "%  "
+         << "Temperature: " << setw(3) << engineTemp << "°C" << endl;
+
+    if (engineTemp > 100) {
+        cout << "WARNING: Engine temperature is too high!" << endl;
+    }
+
+    if (fuelLevel < 10) {
+        cout << "WARNING: Fuel level is critically low!" << endl;
+    }
+}
+
+int main() {
+  
+   
+       int speed = Random(0, 220); 
+       int fuelLevel = Random(0, 100);  
+       int engineTemp = Random(60, 120); 
+    
+    displayData(speed, fuelLevel, engineTemp);
+    return 0;
+}S
