@@ -30,7 +30,7 @@ void displayData(int speed, int fuelLevel, int engineTemp) {
 
 int main() {
   
-   
+   srand(time(0));
        int speed = Random(0, 220); 
        int fuelLevel = Random(0, 100);  
        int engineTemp = Random(60, 120); 
